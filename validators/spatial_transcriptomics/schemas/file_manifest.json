@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "sample_id": {
+            "type": "string"
+        },
+        "file_name": {
+            "type": "string"
+        },
+        "data_category": {
+            "type": "string",
+            "enum": [
+                "sequencing",
+                "gene expression",
+                "spatial transcriptomics",
+                "peaks",
+                "normalized reads",
+                "reads"
+            ]
+        },
+        "file_format": {
+            "type": "string"
+        },
+        "data_type": {
+            "type": "string",
+            "enum": [
+                "raw",
+                "processed",
+                "image",
+                "annotation"
+            ]
+        },
+        "md5sum": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{32}$"
+        },
+        "comment": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "sample_id",
+        "file_name",
+        "data_category",
+        "file_format",
+        "data_type",
+        "md5sum"
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "project_name": {
+            "type": "string"
+        },
+        "availability_type": {
+            "type": "string",
+            "enum": [
+                "open",
+                "restricted"
+            ]
+        },
+        "dataset_description": {
+            "type": "string"
+        },
+        "dataset_name": {
+            "type": "string"
+        },
+        "preservation_method": {
+            "type": "string",
+            "enum": [
+                "fresh frozen",
+                "fixed",
+                "FFPE"
+            ]
+        },
+        "tissue_staining_protocol": {
+            "type": "string"
+        },
+        "tissue_imaging_protocol": {
+            "type": "string"
+        },
+        "cell_isolation_protocol": {
+            "type": "string"
+        },
+        "cdna_extraction_protocol": {
+            "type": "string"
+        },
+        "spot_detection_protocol": {
+            "type": "string"
+        },
+        "library_construction_protocol": {
+            "type": "string"
+        },
+        "sequencing_assay": {
+            "type": "string"
+        },
+        "assay_type": {
+            "type": "string"
+        },
+        "genome_build": {
+            "type": "string",
+            "enum": [
+                "GRCh37",
+                "GRCh38"
+            ]
+        },
+        "gene_reference": {
+            "type": "string"
+        },
+        "data_processing_protocol": {
+            "type": "string"
+        },
+        "cell_type_inference_protocol": {
+            "type": "string"
+        },
+        "publication_pmid": {
+            "type": "string",
+            "pattern": "^([0-9]{8}|PMID:[0-9]{8})$"
+        },
+        "publication_doi": {
+            "type": "string",
+            "format": "uri"
+        }
+    },
+    "required": [
+        "project_name",
+        "dataset_description",
+        "dataset_name",
+        "preservation_method",
+        "library_construction_protocol",
+        "sequencing_assay",
+        "assay_type",
+        "genome_build",
+        "gene_reference",
+        "data_processing_protocol"
+    ]
+}
