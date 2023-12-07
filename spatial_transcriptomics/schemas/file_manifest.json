@@ -39,6 +39,7 @@
             "type": "string"
         }
     },
+    "additionalProperties": false,
     "required": [
         "sample_id",
         "file_name",

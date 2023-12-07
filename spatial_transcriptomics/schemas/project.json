@@ -16,6 +16,7 @@
             "format": "email"
         }
     },
+    "additionalProperties": false,
     "required": [
         "project_name",
         "investigator_name",
