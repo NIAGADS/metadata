@@ -33,7 +33,7 @@
             "type": "string"
         },
         "cell_isolation_protocol": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "cdna_extraction_protocol": {
             "type": "string"
@@ -64,14 +64,14 @@
             "type": "string"
         },
         "cell_type_inference_protocol": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "publication_pmid": {
-            "type": "string",
+            "type": ["string", "integer","null"],
             "pattern": "^([0-9]{8}|PMID:[0-9]{8})$"
         },
         "publication_doi": {
-            "type": "string",
+            "type": ["string","null"],
             "format": "uri"
         }
     },
