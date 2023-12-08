@@ -33,7 +33,7 @@
         },
         "md5sum": {
             "type": "string",
-            "pattern": "^[a-fA-F0-9]{32}$"
+            "format": "md5sum"
         },
         "comment": {
             "type": "string"

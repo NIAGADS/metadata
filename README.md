@@ -1,8 +1,6 @@
 # JSON Schemas for JSON Validation
 
-## Examples
-
-see the NIAGADS [metadata](https://github.com/NIAGADS/metadata.git) repository for example schemas
+Developed in support of collecting and validating metadata but can be used for validating JSON _configuration files for analysis pipelines_ as well.
 
 ## Requirements for NIAGADS JSON Schemas:
 
