@@ -1,5 +1,9 @@
 # JSON Schemas for JSON Validation
 
+## Examples
+
+see the NIAGADS [metadata](https://github.com/NIAGADS/metadata.git) repository for example schemas
+
 ## Requirements for NIAGADS JSON Schemas:
 
 Projects should use the `Draft7` specification: https://json-schema.org/draft-07/json-schema-release-notes
