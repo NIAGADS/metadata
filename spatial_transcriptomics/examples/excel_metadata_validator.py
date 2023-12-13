@@ -25,7 +25,9 @@ def run():
             validationResult = validate_metadata(worksheet)
             logger.debug(validationResult)
             errors[worksheet] = "PASSED" if isinstance(validationResult, bool) else validationResult
-            
+
+        # TODO Biosource properties validation
+        
         fmSchema = path.join(args.schemaDir, 'file_manifest.json')
         fmValidator = FileManifestValidator(args.excelFile, fmSchema, args.debug)
         fmValidator.load('file_manifest')
@@ -34,6 +36,8 @@ def run():
         validationResult = fmValidator.run(failOnError=args.failAtFirst)
         errors['file_manifest'] = "PASSED" if isinstance(validationResult, bool) else validationResult
 
+        # TODO file manifest sample id validation
+        
         logger.info("DONE")
         logger.info(print_dict(errors, pretty=True))
     except Exception as err:
