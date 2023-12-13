@@ -15,7 +15,7 @@ def validate_metadata(worksheet):
     validator = MetadataValidator(args.excelFile, schema, args.debug)
     validator.load(worksheet)
     if args.debug:
-        logger.debug(print_dict(validator.get_metadata_object(), pretty=True))
+        logger.debug(print_dict(validator.get_metadata(), pretty=True))
     return validator.run(failOnError=args.failAtFirst)
     
 def run():
@@ -30,7 +30,7 @@ def run():
         fmValidator = FileManifestValidator(args.excelFile, fmSchema, args.debug)
         fmValidator.load('file_manifest')
         if args.debug:
-            logger.debug(print_dict(fmValidator.get_metadata_object(), pretty=False))
+            logger.debug(print_dict(fmValidator.get_metadata(), pretty=False))
         validationResult = fmValidator.run(failOnError=args.failAtFirst)
         errors['file_manifest'] = "PASSED" if isinstance(validationResult, bool) else validationResult
 
