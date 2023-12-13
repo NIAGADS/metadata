@@ -36,14 +36,6 @@ def run():
 
         logger.info("DONE")
         logger.info(print_dict(errors, pretty=True))
-    
-        # run the validation
-        # ============================================================
-        #result = validator.run()
-
-        # can pass failOnError=True to validator.run() if you want to raise an
-        # ValidationError instead of getting a list of errors
-        #result = validator.run(failOnError=True)
     except Exception as err:
         logger.exception(err)
 
