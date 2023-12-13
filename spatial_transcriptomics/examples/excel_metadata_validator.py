@@ -23,7 +23,6 @@ def run():
         errors = {}
         for worksheet in ['project', 'experiment_metadata']:
             validationResult = validate_metadata(worksheet)
-            logger.debug(validationResult)
             errors[worksheet] = "PASSED" if isinstance(validationResult, bool) else validationResult
 
         # TODO Biosource properties validation
