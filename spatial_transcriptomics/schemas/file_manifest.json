@@ -9,15 +9,7 @@
             "type": "string"
         },
         "data_category": {
-            "type": "string",
-            "enum": [
-                "sequencing",
-                "gene expression",
-                "spatial transcriptomics",
-                "peaks",
-                "normalized reads",
-                "reads"
-            ]
+            "type": "string"
         },
         "file_format": {
             "type": "string"
@@ -36,7 +28,7 @@
             "format": "md5sum"
         },
         "comment": {
-            "type": "string"
+            "type": ["string", "null"]
         }
     },
     "additionalProperties": false,
