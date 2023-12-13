@@ -45,12 +45,13 @@ if __name__ == "__main__":
     argParser.add_argument('--schemaDir', help="full path to directory containing schema files", required=True)
     argParser.add_argument('--failAtFirst', action='store_true')
     argParser.add_argument('--debug', action='store_true')
+    argParser.add_argument('--logFile', help="log file name, full path", default="EXCEL_validation_test.log")
     
     args = argParser.parse_args()
 
     logging.basicConfig(
             handlers=[ExitOnExceptionHandler(
-                filename=path.join(getcwd(), 'EXCEL_validation_test.log'),
+                filename=path.join(getcwd(), args.logFile),
                 mode='w',
                 encoding='utf-8',
             )],
