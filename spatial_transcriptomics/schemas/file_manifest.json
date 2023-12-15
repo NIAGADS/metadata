@@ -27,6 +27,10 @@
             "type": "string",
             "format": "md5sum"
         },
+        "file_size": {
+            "type": "string",
+            "format": "file_size"
+        },
         "comment": {
             "type": ["string", "null"]
         }
