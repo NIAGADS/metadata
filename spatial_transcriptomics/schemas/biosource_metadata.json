@@ -1,6 +1,71 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
-    "properties": {},
-    "requried": []
+    "properties": {
+        "sample_id": {
+            "type": "string"
+        },
+        "organism": {
+            "type": "string",
+            "enum": [
+                "human",
+                "mouse",
+                "rat",
+                "drosophia",
+                "zebrafish",
+                "C.elegans"
+            ]
+        },
+        "specimen_type": {
+            "type": "string",
+            "enum": [
+                "donor",
+                "specimen from organism",
+                "organoid",
+                "cell suspension",
+                "cell line"
+            ]
+        },
+        "life_stage": {
+            "type": "string",
+            "enum": ["embryo", "larval","fetal", "adult"]
+        },
+        "strain_or_line": {
+            "type": "string"
+        },
+        "genotype": {
+            "type": "string"
+        },
+        "developmental_stage": {
+            "type": "string"
+        },
+        "tissue_type": {
+            "type": "string"
+        },
+        "age": {
+            "type": "number"
+        },
+        "diagnosis": {
+            "type": "string"
+        },
+        "experimental_condition": {
+            "type": "string",
+            "enum": ["case", "control", "unknown", "other"]
+        },
+        "biological_sex": {
+            "type": "string",
+            "enum": ["male", "female", "other", "not reported"]
+        },
+        "additional_sample_information": {
+            "type": "string",
+            "format": "info_string"
+        }
+    },
+    "requried": [
+        "sample_id",
+        "organism",
+        "specimen_type",
+        "life_stage",
+        "tissue_type"
+    ]
 }
