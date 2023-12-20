@@ -47,6 +47,7 @@ See the documentation for [more information](#)
 
 ### conditionals
 
+* https://json-schema.org/understanding-json-schema/reference/conditionals
 * https://stackoverflow.com/questions/47139516/properties-based-on-enum-value-in-json-schema
 
 ### built-in formats for validation

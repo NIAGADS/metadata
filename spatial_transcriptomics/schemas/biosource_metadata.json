@@ -80,16 +80,17 @@
     },
     "anyOf": [
         {
-            "properties": {
-                "organism": {
-                    "const": "dropdown"
-                }
-            },
-            "required": [
-                "strain_or_line",
-                "developmental_stage"
-            ],
-            "not": { "required": [ "age" ] }
+            "not": {
+                "properties": {
+                    "organism": {
+                        "const": "human"
+                    }
+                },
+                "required": [
+                    "strain_or_line",
+                    "developmental_stage"
+                ]
+            }
         },
         {
             "properties": {
@@ -98,7 +99,7 @@
                 }
             },
             "required": [
-                "life_stage"
+                "life_stage", "biological_sex"
             ]
         }
     ],
