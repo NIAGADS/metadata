@@ -89,7 +89,8 @@
                 "required": [
                     "strain_or_line",
                     "developmental_stage"
-                ]
+                ],
+                "not": { "required": [ "age" ] }
             }
         },
         {
