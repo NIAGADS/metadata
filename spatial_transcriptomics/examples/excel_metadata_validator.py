@@ -6,6 +6,7 @@ from os import path, getcwd
 from niagads.utils.logging import ExitOnExceptionHandler
 from niagads.validators import MetadataValidator, FileManifestValidator, BiosourcePropertiesValidator
 from niagads.utils.dict import print_dict
+from niagads.utils.string import xstr
 
 logger = logging.getLogger(__name__)
 
@@ -25,14 +26,16 @@ def run():
             errors[worksheet] = "PASSED" if isinstance(validationResult, bool) else validationResult
 
         # TODO Biosource properties validation
-        # schema = path.join(args.schemaDir, 'biosource_properties.json')
-        # bsValidator = BiosourcePropertiesValidator(args.excelFile, schema, args.debug)
-        # bsValidator.load('biosource_properties')
-        # if args.debug:
-        #     logger.debug(print_dict(bsValidator.get_metadata(), pretty=False))
-        # validationResult = bsValidator.run(failOnError=args.failAtFirst)
-        # errors['biosource_properties'] = "PASSED" if isinstance(validationResult, bool) else validationResult
-        # validSampleIds = bmValidator.get_sample_ids()
+        schema = path.join(args.schemaDir, 'biosource_metadata.json')
+        bsValidator = BiosourcePropertiesValidator(args.excelFile, schema, args.debug)
+        bsValidator.load('biosource_metadata')
+        if args.debug:
+            logger.debug(print_dict(bsValidator.get_metadata(), pretty=False))
+        validationResult = bsValidator.run(failOnError=args.failAtFirst)
+        errors['biosource_metadata'] = "PASSED" if isinstance(validationResult, bool) else validationResult
+        validSamples = bsValidator.get_sample_ids()
+        if args.debug:
+            logger.debug("Valid samples: " + xstr(validSamples))
          
         schema = path.join(args.schemaDir, 'file_manifest.json')
         fmValidator = FileManifestValidator(args.excelFile, schema, args.debug)
@@ -43,7 +46,9 @@ def run():
         errors['file_manifest'] = "PASSED" if isinstance(validationResult, bool) else validationResult
 
         # TODO file manifest sample id validation
-        # fmValidator.validate_samples('sample_id', validSamples)
+        isValid = fmValidator.validate_samples('sample_id', validSamples)
+        if args.debug:
+            logger.debug("Samples are valid: " + xstr(isValid))
         
         logger.info("DONE")
         logger.info(print_dict(errors, pretty=True))

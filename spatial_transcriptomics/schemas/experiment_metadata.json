@@ -67,11 +67,11 @@
             "type": ["string", "null"]
         },
         "publication_pmid": {
-            "type": ["string", "integer","null"],
+            "type": ["string", "integer", "null"],
             "format": "pubmed_id"
         },
         "publication_doi": {
-            "type": ["string","null"],
+            "type": ["string", "null"],
             "format": "doi"
         }
     },
