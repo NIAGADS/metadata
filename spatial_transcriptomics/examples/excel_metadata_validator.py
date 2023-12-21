@@ -36,7 +36,7 @@ def run():
         validSamples = bsValidator.get_sample_ids()
         if args.debug:
             logger.debug("Valid samples: " + xstr(validSamples))
-         
+        
         schema = path.join(args.schemaDir, 'file_manifest.json')
         fmValidator = FileManifestValidator(args.excelFile, schema, args.debug)
         fmValidator.load('file_manifest')
