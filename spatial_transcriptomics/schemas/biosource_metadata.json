@@ -27,7 +27,7 @@
             ]
         },
         "life_stage": {
-            "type": "string",
+            "type": ["string", "null"],
             "enum": [
                 "embryo",
                 "larval",
@@ -36,43 +36,45 @@
             ]
         },
         "strain_or_line": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "genotype": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "developmental_stage": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "tissue_type": {
             "type": "string"
         },
         "age": {
-            "type": "number"
+            "type": ["number", "null"]
         },
         "diagnosis": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "experimental_condition": {
-            "type": "string",
+            "type": ["string", "null"],
             "enum": [
                 "case",
                 "control",
                 "unknown",
-                "other"
+                "other",
+                null
             ]
         },
         "biological_sex": {
-            "type": "string",
+            "type": ["string", "null"],
             "enum": [
                 "male",
                 "female",
                 "other",
-                "not reported"
+                "not reported",
+                null
             ]
         },
         "additional_sample_information": {
-            "type": "string",
+            "type": ["string", "null"],
             "format": "info_string"
         }
     },
@@ -87,7 +89,8 @@
                 "required": [
                     "strain_or_line",
                     "developmental_stage"
-                ]
+                ],
+                "not": { "required": [ "age" ] }
             }
         },
         {
