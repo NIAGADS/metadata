@@ -3,7 +3,7 @@
     "type": "object",
     "properties": {
         "sample_id": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "file_name": {
             "type": "string"
@@ -28,6 +28,10 @@
             "format": "md5sum"
         },
         "file_size": {
+            "type": ["string", "integer"],
+            "format": "file_size"
+        },
+        "file_path": {
             "type": "string",
             "format": "file_size"
         },

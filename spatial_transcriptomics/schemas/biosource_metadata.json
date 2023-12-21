@@ -101,7 +101,8 @@
             ]
         }
     ],
-    "requried": [
+    "additionalProperties": false,
+    "required": [
         "sample_id",
         "organism",
         "specimen_type",
