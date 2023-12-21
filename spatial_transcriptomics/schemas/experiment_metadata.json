@@ -75,6 +75,7 @@
             "format": "doi"
         }
     },
+    "additionalProperties": false,
     "required": [
         "project_name",
         "dataset_description",

@@ -104,6 +104,7 @@
             ]
         }
     ],
+    "additionalProperties": false,
     "requried": [
         "sample_id",
         "organism",
