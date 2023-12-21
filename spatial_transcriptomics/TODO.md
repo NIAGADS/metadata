@@ -6,3 +6,5 @@
 
 ## biosource_metadata.json
 
+* conditionals
+
