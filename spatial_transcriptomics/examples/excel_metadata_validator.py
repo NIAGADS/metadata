@@ -39,16 +39,12 @@ def run():
         
         schema = path.join(args.schemaDir, 'file_manifest.json')
         fmValidator = FileManifestValidator(args.excelFile, schema, args.debug)
+        fmValidator.set_sample_reference(validSamples)
         fmValidator.load('file_manifest')
         if args.debug:
             logger.debug(print_dict(fmValidator.get_metadata(), pretty=False))
         validationResult = fmValidator.run(failOnError=args.failAtFirst)
         errors['file_manifest'] = "PASSED" if isinstance(validationResult, bool) else validationResult
-
-        # TODO file manifest sample id validation
-        isValid = fmValidator.validate_samples('sample_id', validSamples)
-        if args.debug:
-            logger.debug("Samples are valid: " + xstr(isValid))
         
         logger.info("DONE")
         logger.info(print_dict(errors, pretty=True))
