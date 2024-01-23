@@ -73,6 +73,9 @@
         "publication_doi": {
             "type": ["string", "null"],
             "format": "doi"
+        },
+        "dataset_accession": {
+            "type": ["string", "null"]
         }
     },
     "additionalProperties": false,
