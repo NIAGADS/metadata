@@ -43,6 +43,7 @@
     "required": [
         "sample_id",
         "file_name",
+        "file_path",
         "data_category",
         "file_format",
         "data_type",
