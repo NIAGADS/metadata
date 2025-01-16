@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Python: DSS metadata_validator",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${fileDirname}/../",
+            "justMyCode": false,
+            "args": [
+                "--schemaDir", "./schemas",
+                "--metadataFileDir", "./examples",
+                "--filePrefix", "test_",
+                //"--fileType", "xlsx",
+                "--logFile", "../../logs/test_txt.log",
+                //"--debug"
+            ]
+        }
+    ]
+}
+
