@@ -11,8 +11,9 @@
                 "--schemaDir", "./schemas",
                 "--metadataFileDir", "./examples",
                 "--filePrefix", "test_",
-                "--fileType", "xlsx",
-                "--logFile", "../../logs/test_txt.log"
+                //"--fileType", "xlsx",
+                "--logFile", "../../logs/test_txt.log",
+                //"--debug"
             ]
         }
     ]
