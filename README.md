@@ -66,7 +66,7 @@ Whether a field is required or not, if you want to allow NULL/empty values in th
 
 The `address` field (`property`) is required (must be present) and the value should be a string, but nulls (empty cells/missing data) are allowed.  
 
-## Useful Documentation to help write JSON Schemas
+## Useful Documentation & Tools to help write JSON Schemas
 
 ### Introduction
 
@@ -83,3 +83,6 @@ The `address` field (`property`) is required (must be present) and the value sho
 
 * <https://json-schema.org/understanding-json-schema/reference/string.html#built-in-formats>
 
+### Online validator
+
+* <https://jsonschema.dev/>
