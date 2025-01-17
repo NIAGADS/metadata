@@ -41,15 +41,15 @@ This validator extends the Draft7 specification to support the following field [
 
 ## Developer notes
 
-## Missing Data
+### Missing Data
 
-### Required Fields
+#### Required Fields
 
 The `required` tag of the schema indicates fields (columns in the tab-delimited text version) that `must` be present in the file, even in all values for the field are left empty.
 
 If a field (`property`) is **not** `required` the schema/metadata file **will pass validation** _even if the field/column is missing_.
 
-### NULL (empty) values
+#### NULL (empty) values
 
 Whether a field is required or not, if you want to allow NULL/empty values in the JSON config or metadata worksheet, you must set the `type` of the field (`property`) to `null`.  For example in the following schema snippet:
 
