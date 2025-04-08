@@ -34,6 +34,8 @@ def validate_participant_info():
             file, schema, "biosource_properties", "participant_id"
         )
         result = pValidator.run(failOnError=False)
+        if 'warnings' not in result: # if no warnings, add placeholder
+            result['warnings'] = []
         return result, pValidator.get_biosource_ids()
 
 
@@ -77,6 +79,9 @@ def validate_sample_info(expectedParticipantIds: List[str]):
         else:
             result["warnings"] = [warning]
 
+    if 'warnings' not in result: # if no warnings, add placeholder
+        result['warnings'] = []
+
     return result, sValidator.get_biosource_ids()
 
 
@@ -102,6 +107,8 @@ def validate_file_manifest(expectedSampleIds: List[str] = None):
         fmValidator.set_sample_field("sample_id")
         fmValidator.set_sample_reference(expectedSampleIds)
         result = fmValidator.run(failOnError=False)
+        if 'warnings' not in result: # if no warnings, add placeholder
+            result['warnings'] = []
         return result
 
 
