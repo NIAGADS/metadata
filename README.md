@@ -23,7 +23,7 @@ Python projects should use the [NIAGADS-pylib](https://github.com/NIAGADS/niagad
 
 ```python
 
-from niagads.validators import JSONValidator
+from niagads.json_validator.core import JSONValidator
 
 schemaFile = "schema.json" # file defining the JSON schema against which the JSON is to be validated
 jsonObj = {"id": 2, ...} # JSON object to be validated
