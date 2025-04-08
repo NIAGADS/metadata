@@ -8,20 +8,19 @@ Test scripts are available in the `dss/scripts` directory:
 
 Validation depends on:
 
-* Python 3.10+
-* git
-* [niagads-pylib](https://github.com/NIAGADS/niagads-pylib)
+* Python >3.12, <4.0
+* [niagads-metadata-validator](https://pypi.org/project/niagads-metadata-validator/)
 
-> Developer recommendation: install `niagads-pylib` in a Python virtual environment (venv)
+> Developer recommendation: install Python dependencies in a Python virtual environment (venv) or use a package manager such as poetry
 
 ```bash
-pip install git+https://github.com/NIAGADS/niagads-pylib.git
+pip install niagads-metadata-validator
 ```
 
 For usage information run:
 
 ```bash
-./scripts/metadata_validatory.py --help
+./scripts/metadata_validator.py --help
 ```
 
 ## Auto-generated documentation from JSON Schema Files
